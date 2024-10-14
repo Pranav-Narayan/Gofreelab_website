@@ -1,0 +1,71 @@
+//  ------------------------------------------
+//  **************   style for Navbar ********
+//  ------------------------------------------
+@import '/app/styles/responsive.scss';
+
+
+nav{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 70px;
+    background-color: #ffffff;
+    @include lg{
+        padding: 10px 20px;
+    }
+    img{
+        height: 50px;
+        @include md{
+            height: 40px;
+        }
+    }
+    .navlinks{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        @include md{
+            display: none;
+        }
+        a{
+            position: relative;
+            ::after{
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 25px;
+                height:3px;
+                border-radius: 5px;
+                width: 0;
+                background-color: rgba(0, 0, 0, 0.519);
+            }
+            :hover::after{
+                width: 100%;
+            }
+        }
+        button{
+            text-transform: capitalize;
+            background-color: orange;
+            border-radius: 15px;
+            padding: 8px 10px;
+            color: white;
+            font-weight: 600;
+            font-family: Sofadi One;
+        }
+    }
+    .res_bar{
+        display: none;
+        flex-direction: column;
+        gap: 0.2rem;
+        @include md{
+            display: flex;
+        }
+        .bar{
+            height: 4px;
+            width: 25px;
+            background-color: black;
+            border-radius: 2rem;
+        }
+    }
+}
+

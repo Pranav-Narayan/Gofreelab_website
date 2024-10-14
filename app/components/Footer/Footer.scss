@@ -1,0 +1,25 @@
+@import '/app/styles/responsive.scss';
+
+
+.footer{
+    margin: 50px 0;
+    background-color: black;
+    padding: 100px 0;
+    display: flex;
+    // height: 25vh;
+    justify-content:space-around;
+    .first{
+        img{
+            width: 300px;
+        }
+        h1{
+            width: 25vw;
+            color: white;
+        }
+    }
+    .line{
+        width: 2px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.463);
+    }
+}

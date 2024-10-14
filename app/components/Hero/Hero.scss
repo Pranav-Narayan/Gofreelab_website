@@ -1,0 +1,41 @@
+.hero{
+    height: calc(100vh - 70px);
+    background: linear-gradient(rgba(8, 0, 58, 0.8),rgba(8,0,58,0.8)), url('../../../public/hero.jpg');
+    background-repeat: no-repeat;
+    background-position:top;
+    background-size: cover;
+    display: flex;
+    .left,.right{
+        flex: 1;
+        
+    }
+    .left{
+        padding: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1rem;
+        h1{
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+            text-shadow: 5px 5px 5px black;
+        }
+        p{
+            color: rgba(255, 255, 255, 0.651);
+            // height: 80px;
+        }
+        button{
+            background-color: orange;
+            text-transform: capitalize;
+            padding: 8px 13px;
+            border-radius: 10px;
+        }
+    }
+    .right{
+        display: flex;
+        align-items: end;
+    }
+    
+}

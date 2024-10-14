@@ -1,0 +1,33 @@
+$breakpoint-sm: 600px;
+$breakpoint-md: 800px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1400px;
+
+// Mixin for small screens
+@mixin sm {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+// Mixin for medium screens
+@mixin md {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+// Mixin for large screens
+@mixin lg {
+  @media (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+
+// Mixin for extra-large screens
+@mixin respond-lg {
+  @media (max-width: $breakpoint-lg) {
+    @content;
+  }
+}

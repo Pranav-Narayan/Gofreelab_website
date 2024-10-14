@@ -1,0 +1,159 @@
+@import '/app/styles/responsive.scss';
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    // background-color: aqua;
+    .top{
+        height: 75vh;
+        img{
+            height: 100%;
+            width: 100vw;
+            object-fit: cover;
+        }
+    }
+    .head{
+        padding: 0 0 25px 0;
+        font-size: 35px;
+        font-weight: 700;
+        width: 50%;
+        text-align: center;
+        text-transform: capitalize;
+        @include lg{
+            font-size: 30px;
+        }
+        @include md{    
+            font-size: 25px;
+        }
+        @include sm{
+            font-size: 20px;
+        }
+    }
+    .row{
+        display: flex;
+        
+        @include md{
+            flex-direction: column;
+        }
+        gap: 2rem;
+        .box{
+            border: 2px solid rgba(0, 0, 0, 0.356);
+            border-radius: 10px;
+            width:300px;
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            gap: 0.3rem;
+            svg:nth-of-type(1){
+                color: rgb(113, 227, 13);
+            }
+            h2{
+                text-transform: capitalize;
+            }
+            p{
+                font-size: 14px;
+                text-align: center;
+            }
+            .socials{
+                display: flex;
+                gap: 0.8rem;
+            }
+        }
+
+    }
+    .row2{
+        margin-bottom: 55px;
+        @include lg{
+            flex-direction: column;
+        }
+    }
+    .row3{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        @include md{
+            flex-direction: column;
+        }
+        iframe{
+            flex: 1.5;
+            // height: 95vh;
+            display: flex;
+            align-items: stretch;
+            width: 100%;
+            height: 100%;
+        }
+        .form{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px 100px;
+            gap:2rem;
+            background-color: black;
+            height: 100%;
+            @include md{
+                padding: 20px 50px;
+            }
+            h1{
+                color: white;
+                font-size: 35px;
+                font-weight: 700;
+            }
+            div{
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                .text{
+                    width: 85%;
+                    height: 50px;
+                }
+                .message{
+                    width: 85%;
+                    height: 100px;  
+                }
+                .text,.message{
+                    color: white;
+                    font-weight: 600;
+                    background-color: transparent;
+                    border-bottom: 2px solid white;
+                    outline: none;
+                }
+                ::placeholder{
+                    color: rgba(255, 255, 255, 0.459);
+                }
+                p{
+                    color: white;
+                    a{
+                        color: blue;
+                        text-decoration: underline;
+                    }
+                    @include sm{
+                        font-size: 14px;
+                    }
+                }   
+            }
+            .btn{
+                button{
+                    color: white;
+                    border: 2px solid white;
+                    padding: 10px 15px;
+                    border-radius: 15px;
+                    text-transform: capitalize;
+                    font-size: 18px;
+                    background-color:transparent;
+                    }
+                    :hover{
+                        background-color: green;
+                        border: 2px solid green;
+                    }
+            }
+        }
+        
+    }
+
+}
