@@ -1,0 +1,165 @@
+
+body{
+    background-image: url('/background3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.internship{
+    // height: 1000px;
+    .first{
+        margin: 0 80px;
+        display: flex;
+        gap: 2rem;
+        .left,.right{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 1.5rem;
+            justify-content: center;  
+        }
+        h1{
+            font-size: 45px;
+        }
+    }
+    .second{
+        margin: 50px 0;
+        .benefits{
+            display: grid;
+            margin: 30px 80px;
+            gap: 1rem;
+            grid-template-columns: repeat(3,auto);
+            .col{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(216, 151, 151, 0.396);
+                border-radius: 0 50px  0 50px ;
+                gap: 1.5rem;
+                img{
+                    width: 20%;
+                    height: 50%;
+                    padding: 10px;
+                    background-color: rgba(255, 255, 255, 0.496);
+                }
+                
+                padding: 25px;
+                .imgbox{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: rgba(255, 255, 255, 0.364);
+                    
+                }
+                .contentbox{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    
+                    h2{
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+    .third{
+        box-sizing: border-box;
+        margin: 100px 0 50px; 
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        .bg{
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 200px;
+            background-color: orange;
+            background: url('../../../public/blue_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        h1{
+            margin:50px 0;
+        }
+        .properties{
+            margin: 0 150px;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 2rem;
+            .box{
+                // height:70%;
+                padding: 15px;
+                border-radius: 10px;
+                background-color: white;
+                display: flex;
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+                justify-content: start;
+                h2{
+                    font-size: 20px;
+                    font-weight: 600;
+                    position: relative;
+                    &::after{
+                        position: absolute;
+                        content: "";
+                        height: 2px;
+                        width: 100%;
+                        border-radius: 10px;
+                        background-color: rgba(0, 0, 0, 0.515);
+                        left: 0;
+                        top: 30px;
+                    }
+                }
+                .imgbox{
+                    // border: 2px solid black;
+                    height: 50px;
+                    // height: 25%;
+                    img{
+                        height: 100%;
+                    }
+                }
+                h3{
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+                p{
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .fourth{
+        margin: 100px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        .video{
+            video{
+                border-radius: 20px;
+            }
+        }
+    }
+
+    h1{
+        font-size: 30px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 800;
+    }
+    .button{
+        padding: 10px 25px;
+        background-color: orange;
+        border-radius: 15px;
+        color: white;
+        text-shadow: 2px 2px 5px black;
+    }
+}

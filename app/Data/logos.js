@@ -1,0 +1,57 @@
+export const img_links = [
+    {
+        id:1,
+        link:"./react_logo.png",
+        text:"React"
+    },
+    {
+        id:2,
+        link:'./node_logo.png',
+    },
+    {
+        id:3,
+        link:'./mongodb_logo.png',
+    },
+    {
+        id:4,
+        link:'./python_logo.png',
+        text:"Python"
+    },
+    {
+        id:5,
+        link:'./java_logo.png',
+    },
+    {
+        id:6,
+        link:'./ai_logo.png',
+        text:"Artificial Intelligence"
+    },
+    {
+        id:7,
+        link:'./dl_logo.png',
+        text:"Deep Learning"
+    },
+    {
+        id:8,
+        link:'./snowflake_logo.png',
+        text:"Snowflake"
+    },
+    {
+        id:9,
+        link:'./aws_logo.png',
+    },
+    {
+        id:10,
+        link:'./docker_logo.png',
+    },
+    {
+        id:11,
+        link:'./flutter_logo.png',
+        text:"Flutter"
+    },
+    {
+        id:12,
+        link:'./databricks_logo.png',
+    }
+
+]

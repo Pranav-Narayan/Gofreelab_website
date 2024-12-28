@@ -1,0 +1,126 @@
+@import '/app/styles/responsive.scss';
+
+.services{
+    .top{
+        position: relative;
+        h1{
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            font-size: 40px;
+            font-weight: 800;
+            color: rgba(0, 0, 0, 0.747);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+    }
+    .second{
+        margin: 0 150px;
+        .head{
+            margin: 25px 0 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            .left{
+                font-size: 35px;
+                font-weight: 700;
+                text-transform: capitalize;
+            }
+        }
+        .foot{
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            .one{
+                flex-direction: row;
+            }
+            .two{
+                flex-direction: row-reverse;
+            }
+            .services{
+                // border:20px solid rgba(0, 0, 255, 0.353);
+                border-radius:25px;
+                background-color: rgba(0, 255, 255, 0.421);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 3rem;
+                .left{
+                    flex: 1;
+                }
+                .right{
+                    flex: 1.5;
+                    padding: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    // overflow: scroll;
+                    h5{
+                        text-transform: uppercase;
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: rgba(0, 0, 0, 0.485);
+                    }
+                    h1{
+                        font-size: 35px;
+                        font-weight: 700;
+                        width: 70%;
+                        text-transform: capitalize;
+                    }
+                    .techs{
+                        // border: 2px solid black;
+                        min-width:300px;
+                        max-width: 75%;  
+                        height: 50px; 
+                        margin: 20px 0;
+                        overflow: hidden;
+                        // position: relative;
+                        .logos{
+                            position: relative;
+                            display: flex;
+                            gap: 2rem;
+                            height: 100%;
+                            width: 100%;
+                            img{
+                                // position: absolute;
+                                left: 0;
+                                top: 0;
+                                // width: 100%;
+                                height: 50px;
+                                // animation: autorun 7s linear infinite;
+                                @keyframes autorun {
+                                    from{
+                                        left: 105%;
+                                    }
+                                    to{
+                                        left: -1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .btns{
+                        display: flex;
+                        gap: 1rem;
+                        button:nth-child(1){
+                            background-color: blue;
+                            color: white;
+                            padding: 8px 12px;
+                            font-weight: 600;
+                            border-radius: 15px;
+                        }
+                        button:nth-child(2){
+                            border:2px solid blue;
+                            padding: 8px 12px;
+                            font-weight: 600;
+                            border-radius: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

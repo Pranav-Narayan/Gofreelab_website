@@ -1,44 +1,115 @@
-'use client'
-import React from 'react'
-import NavLink from './Navlink';
-import './Navbar.scss'
+'use client';
+import React, { useState,useEffect } from 'react';
+import './Navbar.scss';
 import '/app/styles/responsive.scss';
 import { motion } from 'framer-motion';
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from 'react-icons/fa6';
+import { usePathname } from 'next/navigation';
+
 const links = [
-    {url:'/',title:'Home'},
-    {url:'/AboutUs',title:'About Us'},
-    {url:'/Services',title:'Services'},
-    {url:'/Careers',title:'Careers'},
-  ];
+  { url: '/', title: 'Home' },
+  { url: '/AboutUs', title: 'About Us' },
+  { url: '/Internship', title: 'Internship' },
+  { url: '/Services', title: 'Services' },
+  { url: '/Blogs', title: 'Blogs' },
+  { url: '/Careers', title: 'Careers' },
+];
 
 const Navbar = () => {
+  const [open, setOpen] = useState(true);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [sticky,setSticky] = useState(false)
+  const pathname = usePathname()
+  const isInternshipPage = pathname === '/Internship';
+  const isBlogsPage = pathname === '/Blogs';
+
+  const toggleNavbar = () => {
+    setOpen(!open);
+  };
+
+  useEffect( ()=>{
+    window.addEventListener('scroll',()=>{
+        window.scrollY>=50 ? setSticky(true) : setSticky(false)
+    })
+  },[])
+  
 
   return (
-    <nav>
-        {/* ---------- LOGO ---------- */}
-        <img src="../logo.png" alt="" className='logo'/>
+    <div className={`navbar ${isInternshipPage | isBlogsPage && !sticky ? 'transparent' : 'white'}`}>
+      <div className="topbar">
+        <p>contact@Gofreelab.com</p>
+        <div className="icons">
+          <FaInstagram className="text-xl" />
+          <FaFacebookF className="text-xl" />
+          <FaLinkedinIn className="text-xl" />
+        </div>
+      </div>
 
-        {/* -------- NAVLINKS -------- */}
-        <div className="navlinks">
-          {links.map((link)=>(
-                  <NavLink link={link} key={link.title}/>
-              ))}
-          <motion.button
-            whileHover={{scale:1.05}}
-            transition={{type:'spring',stiffness:400,damping:10}}>
-              <NavLink link={{url:'/getintouch',title:'Get In Touch'}} key={'Get In Touch'}/>
-          </motion.button>
+      <nav
+        // onMouseLeave={() => setDropdownOpen(false)}
+      >
+        <a href="/">
+          <img src="../logo.png" alt="Logo" className="logo" />
+        </a>
+
+        <div className="navlinks" >
+          {links.map((link, index) => (
+            <div key={index}
+            onMouseEnter={() => link.title === 'Services' && setDropdownOpen(true)}>
+                <a
+                  href={link.url}>
+                  {link.title}
+                </a>
+            </div>
+          ))}
+          <a href="./getintouch" className="getintouch_btn">
+            Get In Touch
+          </a>
         </div>
 
-         {/* ---------- RESPONSIVE ICON-------- */}
-              <div className="res_bar">
-                  <div className="bar"></div>
-                  <div className="bar"></div>
-                  <div className="bar"></div>
-              </div>
-        
-    </nav>
-  )
-}
+        <div className="res_bar" onClick={toggleNavbar}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+      </nav>
 
-export default Navbar
+      {dropdownOpen && (
+        <motion.div
+          className="dropdown"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.3 }}
+          onMouseEnter={() =>setDropdownOpen(true)}
+          onMouseLeave={() =>setDropdownOpen(false)}
+        >
+          <ul
+          onMouseEnter={() => setDropdownOpen(true)}
+          onMouseLeave={() => setDropdownOpen(false)} className='droplinks'>
+            <a href="/Services/Softwaredevelopment"><li>Software Development</li></a>
+            <a href="/Services"><li>Web Development</li></a>
+            <a href="/Services"><li>Artificial Intelligence</li></a>
+            <a href="/Services"><li>Cloud Analytics</li></a>
+            <a href="/Services"><li>Ui/Ux Designing</li></a>
+            <a href="/Services"><li>Digital Marketing</li></a>
+            <a href="/Services"><li>Hire Developers</li></a>
+          </ul>
+        </motion.div>
+      )}
+
+      <div className={`resp_navlinks ${open ? '' : 'show'}`}>
+        {links.map((link) => (
+          <a key={link.title} href={link.url}>
+            {link.title}
+          </a>
+        ))}
+        <a href="./getintouch" className="getintouch_btn">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;

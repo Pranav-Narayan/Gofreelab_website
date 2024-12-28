@@ -1,10 +1,10 @@
 import React from 'react'
-import Services from '../components/service/Services'
+import Internship from '../components/Internship/Internship'
 
 const page = () => {
   return (
     <div>
-        <Services></Services>
+        <Internship/>
     </div>
   )
 }

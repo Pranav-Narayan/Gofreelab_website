@@ -64,14 +64,14 @@ const Contact = () => {
                 <MdAddIcCall className='text-3xl'/>
                 <h2>General Enquiry</h2>
                 <div>
-                    <p>hr@gofreelab.com</p>
+                    <p>contact@gofreelab.com</p>
                     <p>+91 8886668886</p>
                 </div>
             </div>
             <div className='box'>
                 <MdEmail className='text-3xl'/>
                 <h2>Internship Enquiry</h2>
-                <p>contact@gofreelab.com</p>
+                <p>hr@gofreelab.com</p>
             </div>
         </div>
         

@@ -3,29 +3,233 @@
 //  ------------------------------------------
 @import '/app/styles/responsive.scss';
 
-
-nav{
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 70px;
-    background-color: #ffffff;
-    @include lg{
-        padding: 10px 20px;
-    }
-    img{
-        height: 50px;
-        @include md{
-            height: 40px;
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    &.white {
+        nav {
+          background-color: #ffffff;
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+          transition: 0.2s;
+        }
+      }
+      &.internwhite {
+        nav {
+          background-color: #d1d3d5;
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+          transition: 0.5s;
+        }
+      }
+      &.transparent {
+        nav {
+          background-color: transparent;
+          box-shadow: none;
+        }
+      }
+    .topbar{
+        background-color: rgb(83, 83, 194);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 35px;
+        padding: 0 20px;
+        p{
+            color: white;
+        }
+        .icons{
+            display: flex;
+            gap: 0.5rem;
         }
     }
-    .navlinks{
+    nav{
+        // position: absolute;
+        height: 70px;
         display: flex;
         align-items: center;
-        gap: 2rem;
+        justify-content: space-between;
+        padding: 0px 70px;
+        // background-color: #ffffff;
+        // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.321);
+        @include lg{
+            padding: 0px 20px;
+        }
         @include md{
+            padding: 0 10px;
+        }
+        img{
+            height: 50px;
+            @include lg{
+                height: 35px;
+            }
+            @include md{
+                height: 25px;
+            }
+        }
+        .navlinks{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            @include md{
+                gap: 0.5rem;
+            }
+            @include sm{
+                display: none;
+            }
+            a{
+                position: relative;
+                &:hover {
+                    color: orange;
+                }
+                ::after{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 25px;
+                    height:3px;
+                    border-radius: 5px;
+                    width: 0;
+                    background-color: rgba(0, 0, 0, 0.519);
+                }
+                :hover::after{
+                    width: 100%;
+                }
+            }
+            .getintouch_btn{
+                text-transform: capitalize;
+                background-color: orange;
+                border-radius: 15px;
+                padding: 8px 10px;
+                color: white;
+                font-weight: 600;
+                font-family: Sofadi One;
+                @include md{
+                    padding: 6px 8px;
+                }
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+        .res_bar{
             display: none;
+            flex-direction: column;
+            gap: 0.2rem;
+            @include sm{
+                display: flex;
+            }
+            .bar{
+                height: 4px;
+                width: 25px;
+                background-color: black;
+                border-radius: 2rem;
+            }
+        }
+    }
+    
+
+    .dropdown {
+        position: absolute;
+        top: 100%; // Adjust to align below "Services"
+        left: 65%; // Adjust to center within the parent
+        width: 20%;
+        background-color: rgba(255, 255, 255,1);
+        padding: 10px 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+            li {
+                // color: white;
+                font-size: 1rem;
+                margin: 5px 0;
+                transition: color 0.3s ease-in-out;
+                list-style-type: disc;
+                &:hover {
+                color: orange;
+                }
+            }
+        }
+    }
+
+    // .resp_navlinks {
+        
+    //     visibility: hidden;
+    //     opacity: 0;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     justify-content: start;
+    //     background-color: rgb(140, 196, 20);
+    //     position: absolute;
+    //     top: 100%; /* Adjust based on your navbar height */
+    //     right: 0;
+    //     width: 100vw;
+    //     overflow: hidden;
+    //     max-height: 0; /* Collapsed state */
+    //     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s;
+    //     z-index: 1000;
+    
+    //     a {
+    //         position: relative;
+    //         margin: 10px 0;
+    //         ::after {
+    //             content: "";
+    //             position: absolute;
+    //             left: 0;
+    //             top: 25px;
+    //             height: 3px;
+    //             border-radius: 5px;
+    //             width: 0;
+    //             background-color: rgba(0, 0, 0, 0.519);
+    //         }
+    //         :hover::after {
+    //             width: 100%;
+    //         }
+    //     }
+    
+    //     .getintouch_btn {
+    //         text-transform: capitalize;
+    //         background-color: orange;
+    //         border-radius: 15px;
+    //         padding: 8px 10px;
+    //         color: white;
+    //         font-weight: 600;
+    //         font-family: Sofadi One;
+    //     }
+    // }
+    
+    // .resp_navlinks.show {
+    //     display: flex;
+    //     visibility: visible;
+    //     opacity: 1;
+    //     max-height: 300px; /* Expanded state (adjust to fit content) */
+    // }
+    
+    //*****************************************
+    .resp_navlinks{
+        display: none;
+        position: relative;
+        background-color: rgb(140, 196, 20);
+        right: 0;
+        width: 0;
+        transition: 0.5s;
+        @include sm{
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            padding: 30px 0;
+            gap: 2rem;
+            z-index: 1000;
+            width: 100vw;
         }
         a{
             position: relative;
@@ -43,7 +247,7 @@ nav{
                 width: 100%;
             }
         }
-        button{
+        .getintouch_btn{
             text-transform: capitalize;
             background-color: orange;
             border-radius: 15px;
@@ -53,19 +257,27 @@ nav{
             font-family: Sofadi One;
         }
     }
-    .res_bar{
-        display: none;
-        flex-direction: column;
-        gap: 0.2rem;
-        @include md{
+    .resp_navlinks.show{
+        @include sm{
             display: flex;
-        }
-        .bar{
-            height: 4px;
-            width: 25px;
-            background-color: black;
-            border-radius: 2rem;
+            transform: scale(1);
         }
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
